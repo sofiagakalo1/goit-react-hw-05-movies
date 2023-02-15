@@ -3,14 +3,15 @@
   flex-direction: row;
   gap: 20px;
   width: 800px;
-  height: 450px;
+  min-height: 450px;
+  max-height: max-content;
   background: #ffffff;
   position: absolute;
   left: 0;
   right: 0;
-  margin: auto;
   top: 0;
-  bottom: 0;
+  bottom: 0;  
+  margin: auto;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -30,6 +31,7 @@
   /* width:100%; */
   /* height:auto; */
   border-radius: 10px 0 0 10px;
+  min-height: 450px;
   /* -webkit-border-radius:10px 0 0 10px; */
   /* -moz-border-radius:10px 0 0 10px; */
   /* position:relative; */

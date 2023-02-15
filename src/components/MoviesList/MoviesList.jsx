@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import css from './MovieList.module.css';
 
-const MoviesList = ({ trendingMovies }) => {
-  const elements = trendingMovies.map(({ id, title,poster_path}) => {
-    console.log(id);
+const MoviesList = ({ movies }) => {
+  const elements = movies.map(({ id, title,poster_path}) => {
+    // console.log(id);
     return (
       <li key={id} className={css.li}>
       <Link to={`/movies/${id}`} className={css.link}>

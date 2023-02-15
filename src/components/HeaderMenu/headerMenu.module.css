@@ -1,5 +1,5 @@
 .block {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -8,6 +8,7 @@
 }
 .ul {
   display: flex;
+  height: 50px;
   list-style: none;
   gap: 25px;
   align-items: center;

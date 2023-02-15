@@ -1,7 +1,10 @@
+import { Link, Outlet } from 'react-router-dom';
 import css from './OneMovieDetails.module.css';
+
 const OneMovieDetails = ({ movieDetails }) => {
   const { title, poster_path, release_date, vote_average, overview, genres } =
     movieDetails;
+
   const movieGenres = genres
     ?.map(genre => {
       return genre.name;
@@ -10,7 +13,8 @@ const OneMovieDetails = ({ movieDetails }) => {
   // console.log(genres)
   const date = release_date?.slice(0, 4);
   // console.log(release_date)
-  const votes = (vote_average*10).toFixed(0);
+  const votes = (vote_average * 10).toFixed(0);
+
   return (
     <>
       {/* <h1>OneMovieDetails</h1> */}
@@ -31,6 +35,11 @@ const OneMovieDetails = ({ movieDetails }) => {
           <p className={css.overview}>{overview}</p>
           <h3 className={css.h3}>Genres</h3>
           <p className={css.genres}>{movieGenres}</p>
+          <ul>
+            <Link to="cast">Cast</Link>
+            <Link to="reviews">Rewiews</Link>
+            <Outlet />
+          </ul>
         </div>
       </div>
     </>

@@ -8,13 +8,31 @@ const instance = axios.create({
 })
 
 export async function getTrendingMovies(){
-    const query = '/trending/movie/day';
+    const query = '/trending/movie/day?';
         const response  = await instance.get(query);
         return response;
     }
 
     export async function getMovieDetailsById(movieId){
-        const query = `/movie/${movieId}`;
+        const query = `/movie/${movieId}?`;
+        const response = await instance.get(query);
+        return response;
+    }
+
+    export async function getMoviesBySearch(search){
+        const query = `/search/movie?query=${search}`;
+        const response = await instance.get(query);
+        return response;
+    }
+
+    export async function getMovieCast(movieId){
+        const query = `/movie/${movieId}/credits?`;
+        const response = await instance.get(query);
+        return response;
+    }
+
+    export async function getMovieReviews(movieId){
+        const query = `/movie/${movieId}/reviews?`;
         const response = await instance.get(query);
         return response;
     }
