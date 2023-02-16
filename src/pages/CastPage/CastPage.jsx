@@ -40,9 +40,13 @@ const Cast = () => {
   return (
     <>
       {/* <h1>Cast</h1> */}
-      {error && <h1>error...</h1>}
+      {error && <h1>Something went wrong...</h1>}
       {loading && <Loader />}
-      <ol>{elements}</ol>
+      {Boolean(cast.length) ? (
+        <ol>{elements}</ol>
+      ) : (
+        `There is no information about cast :(`
+      )}
     </>
   );
 };

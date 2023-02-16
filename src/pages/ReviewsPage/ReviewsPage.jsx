@@ -39,9 +39,13 @@ const Reviews = () => {
   return (
     <>
       {/* <h1>Reviews</h1> */}
-      {error && <h1>error...</h1>}
+      {error && <h1>Something went wrong...</h1>}
       {loading && <Loader />}
-      {Boolean(reviews.length) ? <ul>{elements}</ul> : `There are no reviews to this movie :(`}
+      {Boolean(reviews.length) ? (
+        <ul>{elements}</ul>
+      ) : (
+        `There are no reviews of this movie :(`
+      )}
     </>
   );
 };

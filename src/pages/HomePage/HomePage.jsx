@@ -27,7 +27,7 @@ const HomePage = () => {
   }, []);
   return (
     <>
-      {error && <h1>error...</h1>}
+      {error && <h1>Something went wrong...</h1>}
       {loading && <Loader />}
       {/* <h1>HomePage</h1> */}
       <MoviesList movies={trendingMovies} />

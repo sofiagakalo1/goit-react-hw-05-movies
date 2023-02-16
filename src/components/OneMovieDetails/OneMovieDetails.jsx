@@ -35,11 +35,17 @@ const OneMovieDetails = ({ movieDetails }) => {
           <p className={css.overview}>{overview}</p>
           <h3 className={css.h3}>Genres</h3>
           <p className={css.genres}>{movieGenres}</p>
-          <ul>
-            <Link to="cast">Cast</Link>
-            <Link to="reviews">Rewiews</Link>
-            <Outlet />
-          </ul>
+          <div>
+            <ul>
+              <li>
+                <Link to="cast">Cast</Link>
+              </li>
+              <li>
+                <Link to="reviews">Rewiews</Link>
+              </li>
+            </ul>
+          </div>
+          <Outlet />
         </div>
       </div>
     </>
