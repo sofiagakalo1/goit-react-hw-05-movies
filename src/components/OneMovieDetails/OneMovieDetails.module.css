@@ -3,7 +3,7 @@
   flex-direction: row;
   gap: 20px;
   width: 800px;
-  min-height: 450px;
+  min-height: 460px;
   max-height: max-content;
   background: #ffffff;
   position: absolute;
@@ -30,7 +30,7 @@
   /* width:100%; */
   /* height:auto; */
   border-radius: 10px 0 0 10px;
-  min-height: 459.54px;
+  min-height: 460px;
   /* position:relative; */
 }
 
