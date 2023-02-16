@@ -35,13 +35,17 @@ const OneMovieDetails = ({ movieDetails }) => {
           <p className={css.overview}>{overview}</p>
           <h3 className={css.h3}>Genres</h3>
           <p className={css.genres}>{movieGenres}</p>
-          <div>
-            <ul>
-              <li>
-                <Link to="cast">Cast</Link>
+          <div className={css.additional_block}>
+            <ul className={css.additional_ul}>
+              <li className={css.additional_li}>
+                <Link to="cast" className={css.additional_link}>
+                  <button type="button" className={css.additional_button}>Cast</button>
+                </Link>
               </li>
-              <li>
-                <Link to="reviews">Rewiews</Link>
+              <li className={css.additional_li}>
+                <Link to="reviews" className={css.additional_link}>
+                  <button type="button" className={css.additional_button}>Rewiews</button>
+                </Link>
               </li>
             </ul>
           </div>

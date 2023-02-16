@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getMovieReviews } from '../../utils/API/movies-api';
 import Loader from '../../components/Loader/Loader';
+import { noReviewsMessage } from '../../components/messages/messages';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -44,7 +45,7 @@ const Reviews = () => {
       {Boolean(reviews.length) ? (
         <ul>{elements}</ul>
       ) : (
-        `There are no reviews of this movie :(`
+        noReviewsMessage()
       )}
     </>
   );

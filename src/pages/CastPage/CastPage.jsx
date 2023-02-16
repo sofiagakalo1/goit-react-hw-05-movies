@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 
 import { getMovieCast } from '../../utils/API/movies-api';
 import Loader from '../../components/Loader/Loader';
+import { noCastMessage } from '../../components/messages/messages';
+
+import css from './CastPage.module.css';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -29,9 +32,9 @@ const Cast = () => {
     fetchCast();
   }, [movieId]);
 
-  const elements = cast.map(({ id, name, character }) => {
+  const elements = cast.map(({ id, name }) => {
     return (
-      <li key={id}>
+      <li key={id} className={css.li}>
         <p>{name}</p>
       </li>
     );
@@ -43,9 +46,9 @@ const Cast = () => {
       {error && <h1>Something went wrong...</h1>}
       {loading && <Loader />}
       {Boolean(cast.length) ? (
-        <ol>{elements}</ol>
+        <ul className={css.ul}>{elements}</ul>
       ) : (
-        `There is no information about cast :(`
+        noCastMessage()
       )}
     </>
   );

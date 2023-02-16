@@ -4,6 +4,7 @@ import { getMoviesBySearch } from '../../utils/API/movies-api';
 import Loader from '../../components/Loader/Loader';
 import MoviesList from '../../components/MoviesList/MoviesList';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import {noResultsMessage} from '../../components/messages/messages';
 
 const Movies = () => {
   const [searchedMovies, setSearchedMovies] = useState([]);
@@ -41,6 +42,7 @@ const Movies = () => {
         setError(error.message);
       } finally {
         setLoading(false);
+        noResultsMessage();
       }
     };
     fetchMovies();
@@ -55,7 +57,7 @@ const Movies = () => {
       <SearchBar onSubmit={onSubmit} />
       {loading && <Loader />}
       {searchedMovies.length > 0 && <MoviesList movies={searchedMovies} />}
-      {noResult && <p>We don't have such movie...</p>}
+      {noResult && noResultsMessage()}
     </>
   );
 };
