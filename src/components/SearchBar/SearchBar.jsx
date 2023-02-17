@@ -1,9 +1,13 @@
 import { BsSearch } from 'react-icons/bs';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import css from './SearchBar.module.css';
 
-const SearchBar = ({ onSubmit }) => {
+const SearchBar = ({ onSubmit, initialValue }) => {
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    setSearch(initialValue);
+  }, [initialValue]);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -12,8 +16,7 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   const handleChange = event => {
-    const { value } = event.target;
-    setSearch(value);
+    setSearch(event.target.value);
     // console.log(value);
   };
 
@@ -22,6 +25,7 @@ const SearchBar = ({ onSubmit }) => {
       <form onSubmit={handleSubmit} className={css.searchForm}>
         <input
           type="input"
+          value={search}
           onChange={handleChange}
           className={css.searchForm_input}
           placeholder="Search movie..."

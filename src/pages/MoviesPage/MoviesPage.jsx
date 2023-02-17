@@ -54,7 +54,7 @@ const Movies = () => {
     <>
       {/* <h1>Movies</h1> */}
       {error && <h1>error...</h1>}
-      <SearchBar onSubmit={onSubmit} />
+      <SearchBar onSubmit={onSubmit} initialValue={search}/>
       {loading && <Loader />}
       {searchedMovies.length > 0 && <MoviesList movies={searchedMovies} />}
       {noResult && noResultsMessage()}
