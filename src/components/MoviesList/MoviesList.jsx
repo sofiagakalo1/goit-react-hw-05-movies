@@ -31,9 +31,9 @@ const MoviesList = ({ movies }) => {
 };
 export default MoviesList;
 
-MoviesList.defaultProps = {
-  movies: [],
-};
+// MoviesList.defaultProps = {
+//   movies: [],
+// };
 
 MoviesList.propTypes = {
   movies: PropTypes.arrayOf(
