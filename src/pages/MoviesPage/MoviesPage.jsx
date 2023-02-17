@@ -5,6 +5,7 @@ import Loader from '../../components/Loader/Loader';
 import MoviesList from '../../components/MoviesList/MoviesList';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import {noResultsMessage} from '../../components/messages/messages';
+import css from './MoviesPage.module.css';
 
 const Movies = () => {
   const [searchedMovies, setSearchedMovies] = useState([]);
@@ -55,7 +56,7 @@ const Movies = () => {
       {/* <h1>Movies</h1> */}
       {error && <h1>error...</h1>}
       <SearchBar onSubmit={onSubmit} initialValue={search}/>
-      {loading && <Loader />}
+      {loading && <Loader/>}
       {searchedMovies.length > 0 && <MoviesList movies={searchedMovies} />}
       {noResult && noResultsMessage()}
     </>
