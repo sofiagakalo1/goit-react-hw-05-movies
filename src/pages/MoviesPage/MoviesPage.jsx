@@ -32,11 +32,11 @@ const Movies = () => {
       return;
     }
     const fetchMovies = async () => {
-      console.log(search);
+      // console.log(search);
       try {
         const response = await getMoviesBySearch(search);
         const { results } = response.data;
-        console.log(results);
+        // console.log(results);
         setSearchedMovies([...results]);
         setIsFetched(true);
       } catch (error) {

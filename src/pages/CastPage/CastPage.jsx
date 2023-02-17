@@ -13,14 +13,14 @@ const Cast = () => {
   const [error, setError] = useState(null);
 
   const { movieId } = useParams();
-  console.log(movieId);
+  // console.log(movieId);
 
   useEffect(() => {
     const fetchCast = async () => {
       try {
         setLoading(true);
         const response = await getMovieCast(movieId);
-        console.log(response);
+        // console.log(response);
         const { cast } = response.data;
         setCast(cast);
       } catch (error) {

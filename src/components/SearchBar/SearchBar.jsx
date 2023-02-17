@@ -1,14 +1,10 @@
 import { BsSearch } from 'react-icons/bs';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './SearchBar.module.css';
 
 const SearchBar = ({ onSubmit, initialValue }) => {
-  const [search, setSearch] = useState('');
-
-  useEffect(() => {
-    setSearch(initialValue);
-  }, [initialValue]);
+  const [search, setSearch] = useState(initialValue);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -41,11 +37,6 @@ const SearchBar = ({ onSubmit, initialValue }) => {
 };
 export default SearchBar;
 
-SearchBar.defaultProps = {
-  initialValue: '',
-};
-
 SearchBar.propTypes = {
-  initialValue: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
