@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const CastPage = lazy(() => import('../../pages/CastPage/CastPage'));
@@ -19,7 +19,7 @@ const MoviesRotes = () => {
           <Route path="cast" element={<CastPage />} />
           <Route path="reviews" element={<ReviewsPage />} />
         </Route>
-        <Route path="*" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" replace="*"/>} />
       </Routes>
     </Suspense>
   );
