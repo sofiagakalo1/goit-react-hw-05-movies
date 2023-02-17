@@ -32,11 +32,7 @@ const MoviesList = ({ movies }) => {
             state={{ from: location }}
             className={css.link}
           >
-            <img
-              src={NoPosterImg}
-              alt={title}
-              className={css.img}
-            />
+            <img src={NoPosterImg} alt={title} className={css.img} />
             <p className={css.title}>{title}</p>
           </Link>
         </li>

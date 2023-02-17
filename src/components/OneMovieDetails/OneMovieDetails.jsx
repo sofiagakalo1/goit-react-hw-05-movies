@@ -18,7 +18,7 @@ const OneMovieDetails = ({ movieDetails, from }) => {
   // console.log(release_date)
   const votes = (vote_average * 10).toFixed(0);
 
-  if(poster_path){
+  if (poster_path) {
     return (
       <>
         {/* <h1>OneMovieDetails</h1> */}
@@ -72,17 +72,13 @@ const OneMovieDetails = ({ movieDetails, from }) => {
         </div>
       </>
     );
-  }else{
+  } else {
     return (
       <>
         {/* <h1>OneMovieDetails</h1> */}
         <div className={css.item}>
           <div className={css.imgBlock}>
-            <img
-              src={NoPosterImg}
-              alt={title}
-              className={css.img}
-            />
+            <img src={NoPosterImg} alt={title} className={css.img} />
           </div>
           <div className={css.infoBlock}>
             <h1 className={css.h1}>

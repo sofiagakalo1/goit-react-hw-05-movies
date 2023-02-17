@@ -4,8 +4,8 @@ import { getMoviesBySearch } from '../../utils/API/movies-api';
 import Loader from '../../components/Loader/Loader';
 import MoviesList from '../../components/MoviesList/MoviesList';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import {noResultsMessage} from '../../components/messages/messages';
-import css from './MoviesPage.module.css';
+import { noResultsMessage } from '../../components/messages/messages';
+// import css from './MoviesPage.module.css';
 
 const Movies = () => {
   const [searchedMovies, setSearchedMovies] = useState([]);
@@ -14,7 +14,7 @@ const Movies = () => {
   const [isFetched, setIsFetched] = useState(false);
   //   const [search, setSearch] = useState('');
   //щоб людина могла побачити що вона знайшла, ми маємо зберігати її запит в стоці адреси, а не в локальному стейті.
-  const [searchParams, setSearchParams] = useSearchParams({search: ''});
+  const [searchParams, setSearchParams] = useSearchParams({ search: '' });
   const search = searchParams.get('search');
 
   const onSubmit = searchQuery => {
@@ -55,8 +55,8 @@ const Movies = () => {
     <>
       {/* <h1>Movies</h1> */}
       {error && <h1>error...</h1>}
-      <SearchBar onSubmit={onSubmit} initialValue={search}/>
-      {loading && <Loader/>}
+      <SearchBar onSubmit={onSubmit} initialValue={search} />
+      {loading && <Loader />}
       {searchedMovies.length > 0 && <MoviesList movies={searchedMovies} />}
       {noResult && noResultsMessage()}
     </>
