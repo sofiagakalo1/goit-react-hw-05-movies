@@ -1,7 +1,8 @@
+import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import css from './OneMovieDetails.module.css';
 
-const OneMovieDetails = ({ movieDetails }) => {
+const OneMovieDetails = ({ movieDetails, from }) => {
   const { title, poster_path, release_date, vote_average, overview, genres } =
     movieDetails;
 
@@ -38,18 +39,32 @@ const OneMovieDetails = ({ movieDetails }) => {
           <div className={css.additional_block}>
             <ul className={css.additional_ul}>
               <li className={css.additional_li}>
-                <Link to="cast" className={css.additional_link}>
-                  <button type="button" className={css.additional_button}>Cast</button>
+                <Link
+                  to="cast"
+                  state={{ from }}
+                  className={css.additional_link}
+                >
+                  <button type="button" className={css.additional_button}>
+                    Cast
+                  </button>
                 </Link>
               </li>
               <li className={css.additional_li}>
-                <Link to="reviews" className={css.additional_link}>
-                  <button type="button" className={css.additional_button}>Rewiews</button>
+                <Link
+                  to="reviews"
+                  state={{ from }}
+                  className={css.additional_link}
+                >
+                  <button type="button" className={css.additional_button}>
+                    Rewiews
+                  </button>
                 </Link>
               </li>
             </ul>
           </div>
-          <Outlet />
+          <Suspense fallback={<p>...loading</p>}>
+            <Outlet />
+          </Suspense>
         </div>
       </div>
     </>

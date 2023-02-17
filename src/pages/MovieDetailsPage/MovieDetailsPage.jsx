@@ -46,7 +46,7 @@ const MovieDetailsPage = () => {
       >
         Go back
       </button>
-      <OneMovieDetails movieDetails={movieDetails} state={{ from }} />
+      <OneMovieDetails movieDetails={movieDetails} from={from} />
     </>
   );
 };
