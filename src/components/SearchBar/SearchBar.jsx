@@ -1,5 +1,6 @@
 import { BsSearch } from 'react-icons/bs';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import css from './SearchBar.module.css';
 
 const SearchBar = ({ onSubmit, initialValue }) => {
@@ -39,3 +40,12 @@ const SearchBar = ({ onSubmit, initialValue }) => {
   );
 };
 export default SearchBar;
+
+SearchBar.defaultProps = {
+  initialValue: '',
+};
+
+SearchBar.propTypes = {
+  initialValue: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};

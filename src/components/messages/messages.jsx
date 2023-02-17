@@ -19,7 +19,7 @@ export function noReviewsMessage() {
 export function noCastMessage() {
   return (
     <div className={css.noReviewsMessage_div}>
-      <h3 className={css.noReviewsMessage_h3}>There is   no info about cast :(</h3>
+      <h3 className={css.noReviewsMessage_h3}>There is no info about cast :</h3>
     </div>
   );
 }

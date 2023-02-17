@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import css from './OneMovieDetails.module.css';
 
 const OneMovieDetails = ({ movieDetails, from }) => {
@@ -72,3 +73,11 @@ const OneMovieDetails = ({ movieDetails, from }) => {
 };
 
 export default OneMovieDetails;
+
+OneMovieDetails.defaultProps = {
+  movieDetails: {},
+};
+
+OneMovieDetails.propTypes = {
+  movieDetails: PropTypes.object.isRequired,
+};
