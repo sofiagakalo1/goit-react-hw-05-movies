@@ -14,7 +14,7 @@ const Movies = () => {
   const [isFetched, setIsFetched] = useState(false);
   //   const [search, setSearch] = useState('');
   //щоб людина могла побачити що вона знайшла, ми маємо зберігати її запит в стоці адреси, а не в локальному стейті.
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams({search: ''});
   const search = searchParams.get('search');
 
   const onSubmit = searchQuery => {
